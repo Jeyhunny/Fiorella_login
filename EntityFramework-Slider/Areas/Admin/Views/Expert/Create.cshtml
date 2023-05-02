@@ -1,0 +1,32 @@
+﻿@model Experts
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container my-5">
+
+    <form class="form-sample" asp-action="Create" method="post" enctype="multipart/form-data">
+
+        <label for="formFile" class="form-label">Choose an image for expert</label>
+        <input class="form-control" id="customFile" asp-for="Photo"/> 
+        <span class="text-danger" asp-validation-for="Photo">@ViewBag.error</span>
+
+
+        <label for="start" class=" mt-3">Name</label>
+        <input type="text" class="form-control " id="customFile" asp-for="Name"/>
+        <span class="text-danger" asp-validation-for="Name">@ViewBag.error</span>
+
+        <label for="start" class=" mt-3">Position</label>
+        <input type="text" class="form-control " id="customFile" asp-for="Position" />
+        <span class="text-danger" asp-validation-for="Position">@ViewBag.error</span>
+      
+        <div class="buttons my-3">
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <a class="btn btn-light" asp-action="Index">Cancel</a>
+        </div>
+       
+    </form>
+</div>
+
+

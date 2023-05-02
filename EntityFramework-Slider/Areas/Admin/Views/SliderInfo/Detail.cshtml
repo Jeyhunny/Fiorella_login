@@ -1,0 +1,52 @@
+﻿@model SliderInfo
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container my-5">
+    <h1>Slider Info detail</h1>
+
+
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                         <td class="py-1">
+                            <div class="image">
+                                    <img src="~/img/@Model.SignatureImage" alt="image" />
+
+                            </div>
+                        </td>
+                       <td>
+                           @Html.Raw(Model.Title)
+                        </td>
+                        <td>
+                            <span>@Model.Description</span>
+                        </td>
+
+                    </tr>
+
+            </tbody>
+        </table>
+        <a class="btn btn-info mt-5" asp-action="Index">Back</a>
+
+    </div>
+</div>
+
+
+

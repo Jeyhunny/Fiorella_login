@@ -1,0 +1,58 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div class="container my-5">
+        <div class="mt-5">
+            <label for="formFile" class="form-label my-2">Add Title</label>
+            <input class="form-control" disabled id="customFile" asp-for="Name" />
+            <span class="text-danger" asp-validation-for="Name">@ViewBag.error</span>
+        </div>
+        <div class="mt-5">
+            <label for="formFile" class="form-label my-2">Add Description</label>
+            <input class="form-control" disabled id="category-text" value="@ViewBag.description" rows="5"/>
+            <span class="text-danger" asp-validation-for="Description">@ViewBag.error</span>
+        </div>
+        <div class="mt-5">
+            <label for="formFile" class="form-label my-2">Add Price</label>
+            <input type="text" class="form-control" disabled id="customFile" asp-for="Price" /> 
+            <span class="text-danger" asp-validation-for="Price">@ViewBag.error</span>
+        </div>
+        <div class="mt-5">
+            <label for="formFile" class="form-label my-2">Add Count</label>
+            <input class="form-control" disabled id="customFile" asp-for="Count" />
+            <span class="text-danger" asp-validation-for="Count">@ViewBag.error</span>
+        </div>
+        <div class="mt-5">
+            <label for="formFile" class="form-label my-2">Add Category</label>
+            <input class="form-control" disabled id="customFile" asp-for="Category.Name" />
+        </div>
+ 
+        <div class="mt-5">
+               @foreach (var item in Model.Images)
+               {
+                   <img src="~/img/@item.Image" style="width: 150px; height: 150px;"/>
+               }
+        </div>
+
+        <div class="mt-5">
+           
+            <h3 class="text-danger">Are you sure to delete product?</h3>
+
+        </div>
+
+
+    <form class="forms-sample" asp-action="Delete"  method="post" >
+         <div class="mt-5">
+           <div class="buttons my-3">
+                <button type="submit" class="btn btn-primary mr-2">Delete</button>
+                <a class="btn btn-light" asp-action="Index">Cancel</a>
+           </div>
+        </div>
+    </form>  
+
+</div>
+

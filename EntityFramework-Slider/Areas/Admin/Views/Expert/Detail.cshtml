@@ -1,0 +1,53 @@
+﻿@model Experts
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container my-5">
+    <h1>Expert detail</h1>
+
+
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Posiion
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="py-1">
+                          <div class="image">
+                                    <img src="~/img/@Model.Image" alt="image" />
+                          </div>
+                    </td>
+                    <td>
+                        <span>@Model.Name</span>
+                    </td>
+                    <td>
+                        <span>@Model.Position</span>
+                    </td>
+                  
+
+                </tr>
+
+            </tbody>
+        </table>
+        <a class="btn btn-info mt-5" asp-action="Index">Back</a>
+
+    </div>
+</div>
+
+
+

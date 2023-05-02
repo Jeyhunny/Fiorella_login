@@ -1,0 +1,36 @@
+﻿@model ExpertUpdateVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container mt-5">
+    <h1>Edit</h1>
+  
+        <div class="img-detail">
+            <img class="img-fluid" src="~/img/@Model.Image" />
+        </div>
+    <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
+
+        <div class="form-group mt-5">
+            <label for="formFile" class="form-label">Choose an image for expert</label>
+            <input class="form-control" type="file" id="formFile" asp-for="Photo" />
+        </div>
+        <div class="form-group mt-5">
+            <label for="formFile" class="form-label">Add name</label>
+            <input class="form-control" type="text" id="formFile" asp-for="Name">
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group mt-5">
+            <label for="formFile" class="form-label">Add position</label>
+            <input class="form-control" type="text" id="formFile" asp-for="Position">
+            <span class="text-danger" asp-validation-for="Position"></span>
+        </div>
+      
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <button asp-action="Index" class="btn btn-dark">Cancel</button>
+    </form>
+  
+</div>
+
+

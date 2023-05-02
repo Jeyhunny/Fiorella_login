@@ -1,0 +1,39 @@
+﻿
+.active-status{
+    width: 20px;
+    height: 20px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    cursor:pointer;
+}
+
+
+
+.deActive-status {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.slider-content{
+    width: 500px;
+   
+}
+
+.slider-content img {
+    width: 100%;
+}
+
+
+.image {
+    width: 300px !important;
+}
+
+    .image img {
+        border-radius: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }

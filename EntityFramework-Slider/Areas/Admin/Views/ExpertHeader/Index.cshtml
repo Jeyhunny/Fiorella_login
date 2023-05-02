@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ExpertsHeader>
+
+@{
+    ViewData["Title"] = "ExpertsHeader";
+}
+
+
+<div class="container my-5">
+    <a class="btn btn-success" style="float: right;" asp-action="Create">Create</a>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Operation
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+              @foreach (var expertHeader in Model)
+                {
+                    <tr>
+                        <td class="py-1">
+                            @Html.Raw(expertHeader.Title)
+                        </td>
+                        <td class="py-1">
+                            @expertHeader.Description
+                        </td>
+
+                        <td>
+                            <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@expertHeader.Id">Info</a>
+                            <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@expertHeader.Id">Edit</a>
+                            <form asp-action="SoftDelete" asp-route-id="@expertHeader.Id" method="post" style="display: inline-block">
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+
+
+                        </td>
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
+
+
+
+
